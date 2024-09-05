@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB222 Music App</title>
+    <link rel="stylesheet" href="./css/water.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="./js/app.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>ByBeat</h1>
+        <p>Live, Enjoy, Listen to Music in ByBeat</p>
+        <button class="nav"><a href="index.html">Main Page</a></button>
+        <h2 class="request">Request a New Artist</h2>
+        <form class="form" id="requestArtistForm" action="https://httpbin.org/post" method="POST">
+            <label for="artist-name">Artist's Name:</label>
+            <input type="text" id="artist-name" name="artist_name" required>
+
+            <label for="music-genre">Music Genre:</label>
+            <input type="text" id="music-genre" name="genre" list="genres" required>
+            <datalist id="genres">
+                <option value="Rock">
+                <option value="Pop">
+                <option value="Jazz">
+                <option value="Classical">
+                <option value="Hip-Hop">
+                <option value="Country">
+                <option value="Reggae">
+                <option value="Blues">
+                <option value="Electronic">
+                <option value="Folk">
+            </datalist>
+
+            <label for="social-media-urls">Social Media URLs:</label>
+            <div id="urls-container">
+                <input type="url" name="social_media_urls[]" placeholder="Enter URL" required>
+            </div>
+            <label for="songs-videos-urls">Songs/Videos URLs:</label>
+            <div id="songs-container">
+                <input type="url" name="songs_videos_urls[]" placeholder="Enter song/video URL" required>
+            </div>
+            <button class="add" type="button" onclick="addSongField()">Add Another URL</button>
+
+            <label for="explicit-lyrics">Explicit Lyrics:</label>
+            <input type="checkbox" id="explicit-lyrics" name="explicit_lyrics">
+
+            <label for="description">Why should this artist be added?</label>
+            <textarea id="description" name="description" rows="4" placeholder="Type something..." required></textarea>
+
+            <input class="add" type="submit"></input>
+        </form>
+    </header>
+    <footer>
+        <div class="footer-container">
+            <h3>Sign up to get the new releases and more...</h3>
+            <form id="newsletterForm" action="https://httpbin.org/post" method="POST" class="footer-form">
+                <input type="email" id="email" name="email" placeholder="Email address" required>
+                <button type="submit">SIGN UP</button>
+            </form>
+            <div id="message"></div>
+            <div class="footer-info">
+                &copy; 2024 ByBeat.
+            </div>
+        </div>
+</body>
+
+</html>
